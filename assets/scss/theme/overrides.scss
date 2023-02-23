@@ -1,0 +1,9 @@
+.item {
+    a { text-decoration: none; }
+    border: 1px solid transparent;
+    border-radius: 25px;
+    &:hover {
+        border: 1px solid $theme-border-color;
+    }        
+}
+

@@ -48,5 +48,5 @@ $secondary: $theme-text-color-secondary;
 
 
 /*************************** Theme Styles Section ****************************/
-@import "theme/styles.scss"
-
+@import "theme/styles.scss";
+@import "theme/overrides.scss"

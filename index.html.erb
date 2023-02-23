@@ -1,57 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"> 
   <head>
-    <title>Engineering Software as a Service (ESaaS)</title>
-    
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
-    <link rel="shortcut icon" href="favicon.ico"> 
-    
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:700|Roboto:400,400i,700&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome JS-->
-    <script defer src="assets/fontawesome/js/all.min.js"></script>
-
-    <!-- Theme CSS -->  
-    <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-
+    <%= File.read 'preamble.html' %>
   </head> 
 
   <body>    
-    <header class="header">	    
-      <div class="branding">
-        <div class="container-fluid position-relative py-3">
-	  <div class="cta-holder row gx-md-3 gy-3 gy-md-0">
-            <div class="logo-wrapper col-3 col-md-auto">
-	      <div class="site-logo"><a class="navbar-brand" href="index.html"><img class="logo-icon me-2" src="assets/images/aqueduct-sm.gif" alt="logo" ><span class="logo-text">ESaaS</span></a></div>    
-            </div><!--//docs-logo-wrapper-->          
-	    <div class="col-12 col-md-auto">
-	      <a class="btn btn-primary w-100">Students</a>
-	    </div>
-	    <div class="col-12 col-md-auto">
-	      <a class="btn btn-primary w-100">Instructors</a>
-	    </div>
-	    <div class="col-12 col-md-auto">
-	      <a class="btn btn-primary w-100">Videos</a>
-	    </div>
-	    <div class="col-12 col-md-auto">
-	      <a class="btn btn-primary w-100">CS 169</a>
-            </div>
-	    <div class="col-12 col-md-auto">
-	      <a class="btn btn-primary w-100">About</a>
-	    </div>
-	  </div><!--//cta-holder-->
-        </div>
-      </div><!--//branding-->
-    </header><!--//header-->
+    <%= File.read 'header.html' %>
     
     <section class="hero-section">
       <div class="container">
@@ -79,245 +33,38 @@
 	      
 	      <div class="hero-quotes mt-5">
 		<div id="quotes-carousel" class="quotes-carousel carousel slide carousel-fade mb-5" data-bs-ride="carousel" data-bs-interval="8000">
+                  <% load('quotes.rb') %>
 		  <ol class="carousel-indicators">
-		    <li data-bs-target="#quotes-carousel" data-bs-slide-to="0" class="active"></li>
-		    <li data-bs-target="#quotes-carousel" data-bs-slide-to="1"></li>
-		    <li data-bs-target="#quotes-carousel" data-bs-slide-to="2"></li>
-		    <li data-bs-target="#quotes-carousel" data-bs-slide-to="3"></li>
-		    <li data-bs-target="#quotes-carousel" data-bs-slide-to="4"></li>
-		    <li data-bs-target="#quotes-carousel" data-bs-slide-to="5"></li>
-		    <li data-bs-target="#quotes-carousel" data-bs-slide-to="6"></li>
-		    <li data-bs-target="#quotes-carousel" data-bs-slide-to="7"></li>
-		    <li data-bs-target="#quotes-carousel" data-bs-slide-to="8"></li>
-		    <li data-bs-target="#quotes-carousel" data-bs-slide-to="9"></li>
+                    <% 0.upto(QUOTES.length - 1).each do |i| %>
+		    <li id="b<%= i %>" data-bs-target="#quotes-carousel" data-bs-slide-to="<%= i %>"></li>
+                    <% end %>
 		  </ol>
-		  
+
 		  <div class="carousel-inner">
-		    <div class="carousel-item active">
+                    <% QUOTES.each_with_index do |q,i| %>
+		    <div class="carousel-item" id="c<%= i %>">
 		      <blockquote class="quote p-4 theme-bg-light">
-                        It is a pleasure to see a student text that
-                        emphasizes the production of real useful
-                        software. I also applaud the emphasis on
-                        getting results early in the process. Nothing
-                        stimulates student morale and activity more.  
+                        <%= q[0] %>
 		      </blockquote><!--//item-->
 		      <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
 			<div class="col-12 col-md-auto text-center text-md-start">
-			  <img class="source-profile" src="assets/images/profiles/ncsu.png" alt="image" >
+			  <img class="source-profile" src="assets/images/profiles/<%= q[1] %>" alt="image" >
 			</div><!--//col-->
 			<div class="col source-info text-center text-md-start">
-			  <div class="source-name">Prof. Fred Brooks,
-                            Turing Award Winner</div>
-			  <div class="source-title">North
-                            Carolina State University</div>
+			  <div class="source-name"><%= q[2] %></div>
+			  <div class="source-title"><%= q[3] %></div>
 			</div><!--//col-->
 		      </div><!--//source-->
 		    </div><!--//carousel-item-->
-		    <div class="carousel-item">
-		      <blockquote class="quote p-4 theme-bg-light">
-                        Working with your book is a sheer joy for me
-                        and for the students. After first teaching the
-                        course in Fall 2015 I received so much
-                        positive feedback from the students about how
-                        knowledge of agile development helped them in
-                        getting internships and completing  large
-                        projects in different fields such as
-                        biomedical engineering, finance and music.  
-		      </blockquote><!--//item-->
-		      <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
-			<div class="col-12 col-md-auto text-center text-md-start">
-			  <img class="source-profile" src="assets/images/profiles/tulane.jpg" alt="image" >
-			</div><!--//col-->
-			<div class="col source-info text-center text-md-start">
-			  <div class="source-name">Prof. Anastasia Kurdia</div>
-			  <div class="source-title">Tulane University</div>
-			</div><!--//col-->
-		      </div><!--//source-->
-		    </div><!--//carousel-item-->
-		    <div class="carousel-item">
-		      <blockquote class="quote p-4 theme-bg-light">
-                        We have gone from teaching about 60 graduate students per year in
-                        traditional software engineering to 160 per year using ESaaS. We have
-                        similarly seen a large increase in undergraduate students. The local
-                        community of non-profits has come to depend on us for software
-                        development. 
-		      </blockquote><!--//item-->
-		      <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
-			<div class="col-12 col-md-auto text-center text-md-start">
-			  <img class="source-profile" src="assets/images/profiles/tamu.jpg" alt="image" >
-			</div><!--//col-->
-			<div class="col source-info text-center text-md-start">
-			  <div class="source-name">Prof. Hank Walker</div>
-			  <div class="source-title">Texas A&amp;M University</div>
-			</div><!--//col-->
-		      </div><!--//source-->
-		    </div><!--//carousel-item-->
-		    <div class="carousel-item">
-		      <blockquote class="quote p-4 theme-bg-light">
-                        The authors have accomplished a very welcome
-                        juxtaposition of theory and practice for any
-                        modern beginning to advanced Software
-                        Engineering course…I have used the Beta
-                        Edition of this book very successfully in my
-                        advanced undergraduate software engineering
-                        course, where it beautifully complements both
-                        my lectures and the team project.   
-		      </blockquote><!--//item-->
-		      <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
-			<div class="col-12 col-md-auto text-center text-md-start">
-			  <img class="source-profile" src="assets/images/profiles/ucsd.gif" alt="image" >
-			</div><!--//col-->
-			<div class="col source-info text-center text-md-start">
-			  <div class="source-name">Prof. Ingolf Krueger</div>
-			  <div class="source-title">University of
-                            California, San Diego</div>
-			</div><!--//col-->
-		      </div><!--//source-->
-		    </div><!--//carousel-item-->
-		    <div class="carousel-item">
-		      <blockquote class="quote p-4 theme-bg-light">
-                        I love this course so much. It's such an
-                        amazing  advancement in [Software Engineering]
-                        education, and I've been so proud to offer it
-                        for the past 2 years. It is a big learning
-                        curve to new instructors and students, but I
-                        truly believe it's worth it. My students seem
-                        to agree.   
-		      </blockquote><!--//item-->
-		      <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
-			<div class="col-12 col-md-auto text-center text-md-start">
-			  <img class="source-profile" src="assets/images/profiles/uccs.jpeg" alt="image" >
-			</div><!--//col-->
-			<div class="col source-info text-center text-md-start">
-			  <div class="source-name">Prof. Kristen
-                            Justice</div>
-			  <div class="source-title">University of
-                            Colorado at Colorado Springs</div>
-			</div><!--//col-->
-		      </div><!--//source-->
-		    </div><!--//carousel-item-->
-		    <div class="carousel-item">
-		      <blockquote class="quote p-4 theme-bg-light">
-                        An excellent book that will have you building
-                        SaaS apps progressively in a few short
-                        days. The screencasts and the GitHub Gists are
-                        invaluable. A very practical approach to
-                        Agile software development.  
-		      </blockquote><!--//item-->
-		      <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
-			<div class="col-12 col-md-auto text-center text-md-start">
-			  <img class="source-profile" src="assets/images/profiles/delhi.png" alt="image" >
-			</div><!--//col-->
-			<div class="col source-info text-center text-md-start">
-			  <div class="source-name">
-                            Prof. Rakhi Saxena
-                          </div>
-			  <div class="source-title">
-                            Delhi University, India
-                          </div>
-			</div><!--//col-->
-		      </div><!--//source-->
-		    </div><!--//carousel-item-->
-		    <div class="carousel-item">
-		      <blockquote class="quote p-4 theme-bg-light">
-                        This course brings together many the latest
-                        and finest ideas of today's computer science
-                        and software engineering. 
-		      </blockquote><!--//item-->
-		      <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
-			<div class="col-12 col-md-auto text-center text-md-start">
-			  <img class="source-profile" src="assets/images/profiles/jce.png" alt="image" >
-			</div><!--//col-->
-			<div class="col source-info text-center text-md-start">
-			  <div class="source-name">
-                            Prof. Reuven Yagel
-                          </div>
-			  <div class="source-title">
-                            The Jerusalem College of Engineering,
-                            Chennai, India
-                          </div>
-			</div><!--//col-->
-		      </div><!--//source-->
-		    </div><!--//carousel-item-->
-		    <div class="carousel-item">
-		      <blockquote class="quote p-4 theme-bg-light">
-                        Many congratulations. . . Very proud of
-                        including the SPOC in our redeveloped
-                        Bachelors’ in Software Engineering
-                        degree. . . The book is the best I’ve bought,
-                        within minutes of seeing it at ICSE. 
-		      </blockquote><!--//item-->
-		      <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
-			<div class="col-12 col-md-auto text-center text-md-start">
-			  <img class="source-profile" src="assets/images/profiles/adelaide.png" alt="image" >
-			</div><!--//col-->
-			<div class="col source-info text-center text-md-start">
-			  <div class="source-name">
-                            Prof. Ali Babar
-                          </div>
-			  <div class="source-title">
-                            University of Adelaide, Australia
-                          </div>
-			</div><!--//col-->
-		      </div><!--//source-->
-		    </div><!--//carousel-item-->
-		    <div class="carousel-item">
-		      <blockquote class="quote p-4 theme-bg-light">
-                        This novel approach to the teaching of
-                        software development…paves the way to grasp
-                        the agile philosophy…[and] provides students
-                        with a practical continuous-delivery exercise
-                        that is highly valuable to their future
-                        professional career. We strongly recommend the
-                        methodology of Engineering Software as a
-                        Service as a core component of a Software
-                        Engineering curriculum. 
-		      </blockquote><!--//item-->
-		      <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
-			<div class="col-12 col-md-auto text-center text-md-start">
-			  <img class="source-profile" src="" alt="image" >
-			</div><!--//col-->
-			<div class="col source-info text-center text-md-start">
-			  <div class="source-name">
-                            Prof. Antonio Ruiz-Cortes and Prof. Pablo
-                            Fernandez Montes
-                          </div>
-			  <div class="source-title">
-                            University of Seville, Spain
-                          </div>
-			</div><!--//col-->
-		      </div><!--//source-->
-		    </div><!--//carousel-item-->
-		    <div class="carousel-item">
-		      <blockquote class="quote p-4 theme-bg-light">
-                        This book and its associated materials offer unique and strong support
-                        for software engineering classes to work on scalable, modern,
-                        real-world software projects that involve difficult-to-teach concepts
-                        such as service-oriented architecture and database
-                        migration. Undergraduate Computer Science students often vaguely
-                        understand these concepts but do not fully appreciate the significance
-                        and the challenges behind them due to lack of experience in real-world
-                        software development and deployment. This book provides much needed
-                        structure, materials, and resources to enable individual Software
-                        Engineering course instructors to expose students to rich, hands-on
-                        experiences within the limit of one course. 
-		      </blockquote><!--//item-->
-		      <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
-			<div class="col-12 col-md-auto text-center text-md-start">
-			  <img class="source-profile" src="assets/images/profiles/ohiou.jpeg" alt="image" >
-			</div><!--//col-->
-			<div class="col source-info text-center text-md-start">
-			  <div class="source-name">
-                            Prof. Chang Liu
-                          </div>
-			  <div class="source-title">
-                            Ohio University
-                          </div>
-			</div><!--//col-->
-		      </div><!--//source-->
-		    </div><!--//carousel-item-->
+                    <% end %>
 		  </div><!--//carousel-inner-->
 		</div><!--//quotes-carousel-->
+                <script>
+                  document.getElementById('b0').classList.add('active');
+                  document.getElementById('c0').classList.add('active');
+                </script>
+		
+
 		
 	      </div><!--//hero-quotes-->
 	    </div><!--//promo-->
@@ -328,7 +75,7 @@
 	      <div class="book-badge d-inline-block shadow">
 	      </div>
 	    </div><!--//book-cover-holder-->
-	    <div class="text-center"><a class="theme-link scrollto" href="#reviews-section">See all book reviews</a></div>
+
 	  </div><!--col-->
 	</div><!--//row-->
       </div><!--//container-->
@@ -337,29 +84,46 @@
     <section id="benefits-section" class="benefits-section theme-bg-light-gradient py-5">
       <div class="container py-5">
 	<h2 class="section-heading text-center mb-3">What Will You Get From This Book?</h2>
-	<div class="section-intro single-col-max mx-auto text-center mb-5">Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit consequat consequat. Orci varius natoque penatibus et magnis. </div>
+	<div class="section-intro single-col-max mx-auto text-center mb-5">
+          Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit consequat consequat. Orci varius natoque penatibus et magnis.
+        </div>
 	<div class="row text-center">
 	  <div class="item col-12 col-md-6 col-lg-4">
 	    <div class="item-inner p-3 p-lg-4">
-	      <div class="item-header mb-3">
-		<div class="item-icon"><i class="fas fa-laptop-code"></i></div>
-		<h3 class="item-heading">Build Lorem Ipsum lobortis nec mauris habitant morbi</h3>
-	      </div><!--//item-heading-->
-	      <div class="item-desc">
-		List one of your book's benefits here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit consequat consequat. 
-	      </div><!--//item-desc-->
+              <a  target="_blank" href="teach.saasbook.info">
+	        <div class="item-header mb-3">
+		  <div class="item-icon">
+                    <i class="fas fa-laptop-code"></i>
+                  </div>
+		  <h3 class="item-heading">
+                    Instructors: <br>Get Started Using Codio&trade;
+                  </h3>
+	        </div><!--//item-heading-->
+	        <div class="item-desc">
+                  All-in-one Web-based IDE, online textbook, autograding, and LMS integration. 
+	        </div><!--//item-desc-->
 	    </div><!--//item-inner-->
+            </a>
 	  </div><!--//item-->
+
+          
 	  <div class="item col-12 col-md-6 col-lg-4">
 	    <div class="item-inner p-3 p-lg-4">
-	      <div class="item-header mb-3">
-		<div class="item-icon"><i class="fab fa-js-square"></i></div>
-		<h3 class="item-heading">Learn from lorem ipsum dolor sit amet consectetur</h3>
-	      </div><!--//item-heading-->
-	      <div class="item-desc">
-		List one of your book's benefits here. Orci varius natoque penatibus et magnis dis parturient montes.
-	      </div><!--//item-desc-->
+              <a target="_blank" href="https://www.edx.org/professional-certificate/berkeleyx-mastering-agile-development-of-software-as-a-service">
+	        <div class="item-header mb-3">
+		  <div class="item-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                  </div>
+		  <h3 class="item-heading">
+                    Instructors &amp; individual learners:<br>
+                    Get Started Using EdX
+                  </h3>
+	        </div><!--//item-heading-->
+	        <div class="item-desc">
+                  Codio and autograding integration, lecture videos, and quizzes, in a 3-part series that can be taken individually or together for an EdX Professional Certificate.
+	        </div><!--//item-desc-->
 	    </div><!--//item-inner-->
+            </a>
 	  </div><!--//item-->
 	  <div class="item col-12 col-md-6 col-lg-4">
 	    <div class="item-inner p-3 p-lg-4">
@@ -372,39 +136,7 @@
 	      </div><!--//item-desc-->
 	    </div><!--//item-inner-->
 	  </div><!--//item-->
-	  <div class="item col-12 col-md-6 col-lg-4">
-	    <div class="item-inner p-3 p-lg-4">
-	      <div class="item-header mb-3">
-		<div class="item-icon"><i class="fab fa-angular"></i></div>
-		<h3 class="item-heading">Master aliquet augue ac ipsum lobortis interdum</h3>
-	      </div><!--//item-heading-->
-	      <div class="item-desc">
-		List one of your book's benefits here. Orci varius natoque penatibus et magnis dis parturient montes. 
-	      </div><!--//item-desc-->
-	    </div><!--//item-inner-->
-	  </div><!--//item-->
-	  <div class="item col-12 col-md-6 col-lg-4">
-	    <div class="item-inner p-3 p-lg-4">
-	      <div class="item-header mb-3">
-		<div class="item-icon"><i class="fas fa-code-branch"></i></div>
-		<h3 class="item-heading">Deploy elementum mauris tincidunt tempus sagittis</h3>
-	      </div><!--//item-heading-->
-	      <div class="item-desc">
-		List one of your book's benefits here. Orci varius natoque penatibus et magnis dis parturient montes. 
-	      </div><!--//item-desc-->
-	    </div><!--//item-inner-->
-	  </div><!--//item-->
-	  <div class="item col-12 col-md-6 col-lg-4">
-	    <div class="item-inner p-3 p-lg-4">
-	      <div class="item-header mb-3">
-		<div class="item-icon"><i class="fas fa-hand-holding-usd"></i></div>
-		<h3 class="item-heading">Become mattis est et mauris tempus non imperdiet</h3>
-	      </div><!--//item-heading-->
-	      <div class="item-desc">
-		List one of your book's benefits here. Orci varius natoque penatibus et magnis dis parturient montes. 
-	      </div><!--//item-desc-->
-	    </div><!--//item-inner-->
-	  </div><!--//item-->
+          
 	</div><!--//row-->
       </div><!--//container-->
     </section><!--//benefits-section-->

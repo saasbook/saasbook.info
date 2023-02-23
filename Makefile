@@ -1,6 +1,6 @@
-all: index.html assets/css/theme.css
+all: index.html archive.html assets/css/theme.css
 
-%.html: *.html.erb
+%.html: %.html.erb *.rb
 	erb $< > $@
 
 assets/css/theme.css: assets/scss/theme.scss $(wildcard assets/scss/*)
