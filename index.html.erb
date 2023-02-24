@@ -6,31 +6,30 @@
 
   <body>    
     <%= File.read 'header.html' %>
+
+    <section id="benefits-section" class="benefits-section theme-bg-light-gradient py-5">
+      <div class="container py-5">
+	<h2 class="section-heading text-center mb-3">
+          Engineering Software as a Service: <br>
+          An Agile Approach Using Cloud Computing
+        </h2>
+	<div class="section-intro single-col-max mx-auto text-center
+                    mb-5">
+            A one- or two-semester course in Agile/XP development using Ruby on Rails and HTML5/JavaScript to develop,
+            test, and deploy cloud-based and mobile apps.  Accompanied by comprehensive instructor and student materials,
+            including autograded programming assignments, and widely
+            endorsed by industry practitioners and academic instructors.
+        </div>
+      </div>
+    </section>
+    <%= File.read 'tiles.html' %>
     
     <section class="hero-section">
       <div class="container">
 	<div class="row">
 	  <div class="col-12 col-md-7 pt-5 mb-5 align-self-center">
 	    <div class="promo pe-md-3 pe-lg-5">
-	      <h1 class="headline mb-3">
-		Engineering Software as a Service
-	      </h1><!--//headline-->
-	      <div class="subheadline mb-4">
-                An Agile Approach Using Cloud Computing
-	      </div><!--//subheading-->
-	      
-	      <div class="cta-holder row gx-md-3 gy-3 gy-md-0">
-		<div class="col-12 col-md-auto">
-		  <a class="btn btn-secondary w-100">Buy Hardcopy</a>
-		</div>
-		<div class="col-12 col-md-auto">
-		  <a class="btn btn-secondary w-100">Download PDF</a>
-		</div>
-		<div class="col-12 col-md-auto">
-		  <a class="btn btn-secondary scrollto w-100" href="#benefits-section">Learn More</a>
-		</div>
-	      </div><!--//cta-holder-->
-	      
+
 	      <div class="hero-quotes mt-5">
 		<div id="quotes-carousel" class="quotes-carousel carousel slide carousel-fade mb-5" data-bs-ride="carousel" data-bs-interval="8000">
                   <% load('quotes.rb') %>
@@ -63,9 +62,6 @@
                   document.getElementById('b0').classList.add('active');
                   document.getElementById('c0').classList.add('active');
                 </script>
-		
-
-		
 	      </div><!--//hero-quotes-->
 	    </div><!--//promo-->
 	  </div><!--col-->
@@ -81,204 +77,99 @@
       </div><!--//container-->
     </section><!--//hero-section-->
     
-    <section id="benefits-section" class="benefits-section theme-bg-light-gradient py-5">
-      <div class="container py-5">
-	<h2 class="section-heading text-center mb-3">What Will You Get From This Book?</h2>
-	<div class="section-intro single-col-max mx-auto text-center mb-5">
-          Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit consequat consequat. Orci varius natoque penatibus et magnis.
-        </div>
-	<div class="row text-center">
-	  <div class="item col-12 col-md-6 col-lg-4">
-	    <div class="item-inner p-3 p-lg-4">
-              <a  target="_blank" href="teach.saasbook.info">
-	        <div class="item-header mb-3">
-		  <div class="item-icon">
-                    <i class="fas fa-laptop-code"></i>
-                  </div>
-		  <h3 class="item-heading">
-                    Instructors: <br>Get Started Using Codio&trade;
-                  </h3>
-	        </div><!--//item-heading-->
-	        <div class="item-desc">
-                  All-in-one Web-based IDE, online textbook, autograding, and LMS integration. 
-	        </div><!--//item-desc-->
-	    </div><!--//item-inner-->
-            </a>
-	  </div><!--//item-->
-
-          
-	  <div class="item col-12 col-md-6 col-lg-4">
-	    <div class="item-inner p-3 p-lg-4">
-              <a target="_blank" href="https://www.edx.org/professional-certificate/berkeleyx-mastering-agile-development-of-software-as-a-service">
-	        <div class="item-header mb-3">
-		  <div class="item-icon">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                  </div>
-		  <h3 class="item-heading">
-                    Instructors &amp; individual learners:<br>
-                    Get Started Using EdX
-                  </h3>
-	        </div><!--//item-heading-->
-	        <div class="item-desc">
-                  Codio and autograding integration, lecture videos, and quizzes, in a 3-part series that can be taken individually or together for an EdX Professional Certificate.
-	        </div><!--//item-desc-->
-	    </div><!--//item-inner-->
-            </a>
-	  </div><!--//item-->
-	  <div class="item col-12 col-md-6 col-lg-4">
-	    <div class="item-inner p-3 p-lg-4">
-	      <div class="item-header mb-3">
-		<div class="item-icon"><i class="fab fa-rocketchat"></i></div>
-		<h3 class="item-heading">Discover phasellus id egestas tellus maximus</h3>
-	      </div><!--//item-heading-->
-	      <div class="item-desc">
-		List one of your book's benefits here. Orci varius natoque penatibus et magnis dis parturient montes. 
-	      </div><!--//item-desc-->
-	    </div><!--//item-inner-->
-	  </div><!--//item-->
-          
-	</div><!--//row-->
-      </div><!--//container-->
-    </section><!--//benefits-section-->
     
     <section id="content-section" class="content-section">
       <div class="container">
 	<div class="single-col-max mx-auto">
-	  <h2 class="section-heading text-center mb-5">What's Included</h2>
+	  <h2 class="section-heading text-center mb-5">Do-It-Yourself Materials</h2>
+          <p class="text-center">
+            Craft your own teaching or learning experience using our open materials.  Lecture videos are
+            captioned in US English and keyed to book section numbers.  Supplementary videos motivate the ideas in the course. 
+          </p>
 	  <div class="row">
-	    <div class="col-12 col-md-6">
-	      <div class="figure-holder mb-5">
-		<img class="img-fluid" src="assets/images/devbook-devices.png" alt="image" >
-	      </div><!--//figure-holder-->
-	    </div><!--//col-->
 	    <div class="col-12 col-md-6 mb-5">
 	      <div class="key-points mb-4 text-center">
+		<ol class="key-points-list  mb-4 mx-auto d-inline-block text-start">
+                  <li><a
+                        href="https://www.youtube.com/playlist?list=PLeMMGxq3FPxjcFZVmvkuc5tW2HtTkqlgP">
+                      &nbsp;<i class="fas fa-video"></i>&nbsp; Introduction to Software as a Service, Agile Development, and
+                    Cloud Computing</a></li>
+                  <li><a
+                        href="https://www.youtube.com/playlist?list=PLeMMGxq3FPxh7_76PotmzGsZGM8Q1Vthl">
+                      &nbsp;<i class="fas fa-video"></i>&nbsp; How to Learn a New Language</a></li>
+                  <li><a
+                        href="https://www.youtube.com/playlist?list=PLeMMGxq3FPxgAcnQh5eHqTfO4Ucs5JORw">
+                      &nbsp;<i class="fas fa-video"></i>&nbsp; SaaS Application Architecture: Microservices, APIs, and REST</a></li>
+                  <li><a
+                        href="https://www.youtube.com/playlist?list=PLeMMGxq3FPxjBbeB_aZ4L8Wo91rEds_GD">
+                      &nbsp;<i class="fas fa-video"></i>&nbsp; SaaS Framework: Rails as a Model–View–Controller Framework</a></li>
+                  <li><a
+                        href="https://www.youtube.com/playlist?list=PLeMMGxq3FPxgeKHXxYOkV4JKCbRg5gWpg">
+                      &nbsp;<i class="fas fa-video"></i>&nbsp; SaaS Framework: Advanced Programming Abstractions for SaaS</a></li>
+                  <li><a
+                        href="https://www.youtube.com/playlist?list=PLeMMGxq3FPxghXCpd4twByvWG6RKWcxHN">
+                      &nbsp;<i class="fas fa-video"></i>&nbsp; Mobile and Desktop SaaS Clients: JavaScript Introduction</a></li>
+                  <li><a
+                        href="https://www.youtube.com/playlist?list=PLeMMGxq3FPxjbdVAkCU99UumJDWuLvg-l">
+                      &nbsp;<i class="fas fa-video"></i>&nbsp; Requirements: BDD and User Stories</a></li>
+                  <li><a
+                        href="https://www.youtube.com/playlist?list=PLeMMGxq3FPxh_gCC98WbEfpRt5UBFrjAT">
+                      &nbsp;<i class="fas fa-video"></i>&nbsp; Testing: Test-Driven Development</a></li>
+                  <li><a
+                        href="https://www.youtube.com/playlist?list=PLeMMGxq3FPxjSeso1JXLqmqXPDB0Ka-L3">
+                      &nbsp;<i class="fas fa-video"></i>&nbsp; Software Maintenance: Enhancing Legacy Software Using Refactoring
+                    and Agile Methods</a></li>
+                  <li><a
+                        href="https://www.youtube.com/playlist?list=PLeMMGxq3FPxjO97PniMI2kfRyR4_MnT3t">
+                      &nbsp;<i class="fas fa-video"></i>&nbsp; Agile Teams</a></li>
+                  <li><a
+                        href="https://www.youtube.com/playlist?list=PLeMMGxq3FPxhmpbjhY8yurexXmuF4Fvai">
+                      &nbsp;<i class="fas fa-video"></i>&nbsp; Design Patterns for SaaS Apps</a></li>
+                  <li><a
+                        href="https://www.youtube.com/playlist?list=PLeMMGxq3FPxh_vJS0_FVhudNMJ2cA95cH">
+                      &nbsp;<i class="fas fa-video"></i>&nbsp; Dev/Ops</a></li>
+
+		</ol>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+	      <div class="key-points mb-4 text-center">
 		<ul class="key-points-list list-unstyled mb-4 mx-auto d-inline-block text-start">
-		  <li><i class="fas fa-check-circle me-2"></i>List your book's content here.</li>
-		  <li><i class="fas fa-check-circle me-2"></i>PDF fermentum tincidunt erat.</li>
-		  <li><i class="fas fa-check-circle me-2"></i>EPUB curabitur fermentum.</li>
-		  <li><i class="fas fa-check-circle me-2"></i>Lorem ipsum dolor sit amet.</li>
-		  <li><i class="fas fa-check-circle me-2"></i>Praesent molestie odio risus. </li>
-		  <li><i class="fas fa-check-circle me-2"></i>Kindle curabitur fermentum.</li>
-		  <li><i class="fas fa-check-circle me-2"></i>Kindle curabitur fermentum.</li>
-		  <li><i class="fas fa-check-circle me-2"></i>Kindle curabitur fermentum.</li>
-		</ul>
-		<div class="text-center"><a class="btn btn-primary" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/devbook-free-bootstrap-5-book-ebook-landing-page-template-for-developers/">I want this book</a></div>
-	      </div><!--//key-points-->
-	      
-	    </div><!--//col-12-->   
-	  </div><!--//row-->
-	</div><!--//single-col-max-->
+                  <li>
+                    <a href="https://drive.google.com/drive/folders/1YJpubP97LxvfJYLYXsq4JxQ-TQIWZO2f?usp=sharing">
+                      <i class="fa-solid fa-person-chalkboard"></i>
+                      &nbsp; Slides organized by book chapter, in Google Slides format
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://teach.saasbook.info">
+                      <i class="fa-solid fa-book-open"></i>
+                      &nbsp; Instructors' Guide and access to instructor-only materials
+                    </a>
+                  </li>
+                </ul>
+              </div>
+	    </div><!--//key-points-->
+	  </div><!--//col-12-->   
+        </div><!--//row-->
       </div><!--//container-->
     </section><!--//content-section-->
-    
-    <section id="audience-section" class="audience-section py-5">
-      <div class="container">
-	<h2 class="section-heading text-center mb-4">Who This Book Is For</h2>
-	<div class="section-intro single-col-max mx-auto text-center mb-5">
-	  List your target readers in this section and back up with reviews. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sit amet neque sit amet molestie. Vivamus hendrerit nisi condimentum erat tempus, vitae accumsan odio euismod.
-	</div><!--//section-intro-->
-	<div class="audience mx-auto">
-	  <div class="item row gx-3">
-	    <div class="col-auto item-icon"><i class="fas fa-user-check"></i></div>
-	    <div class="col">
-	      <h4 class="item-title">Software Developers</h4>
-	      <div class="item-desc">Learn lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sit amet neque sit amet molestie.</div>
-	    </div><!--//col-->
-	  </div><!--//item-->			    
-	  <div class="item row gx-3">
-	    <div class="col-auto item-icon"><i class="fas fa-user-check"></i></div>
-	    <div class="col">
-	      <h4 class="item-title">App Developers</h4>
-	      <div class="item-desc">Learn lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sit amet neque sit amet molestie.</div>
-	    </div><!--//col-->
-	  </div><!--//item-->			    
-	  <div class="item row gx-3">
-	    <div class="col-auto item-icon"><i class="fas fa-user-check"></i></div>
-	    <div class="col">
-	      <h4 class="item-title">Web Developers</h4>
-	      <div class="item-desc">Learn lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sit amet neque sit amet molestie.</div>
-	    </div><!--//col-->
-	  </div><!--//item-->
-	  <div class="item row gx-3">
-	    <div class="col-auto item-icon"><i class="fas fa-user-check"></i></div>
-	    <div class="col">
-	      <h4 class="item-title">Product Designers</h4>
-	      <div class="item-desc">Learn lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sit amet neque sit amet molestie.</div>
-	    </div><!--//col-->
-	  </div><!--//item-->
-	</div><!--//audience-->
-      </div><!--//container-->
-    </section><!--//audience-section-->
-    
-    <section id="form-section" class="form-section">
-      <div class="container">
-	<div class="lead-form-wrapper single-col-max mx-auto theme-bg-light rounded p-5">
-	  <h2 class="form-heading text-center">Get A Free Preview</h2>
-	  <div class="form-intro text-center mb-3">Sign up to get a free preview of the book. <br>You can offer visitors free book previews to generate leads.</div>
-	  <div class="form-wrapper mx-auto">					
-	    <form class="signup-form row g-2 align-items-center">
-	      <div class="col-12 col-lg-9">
-	        <label class="sr-only" for="semail">Email</label>
-	        <input type="email" id="semail" name="semail1" class="form-control me-md-1 semail" placeholder="Your email">
-	      </div>
-	      <div class="col-12 col-lg-3">
-	        <button type="submit" class="btn btn-primary btn-submit w-100">Send</button>
-	      </div>
-	    </form><!--//signup-form-->
-	  </div><!--//form-wrapper-->
-	</div><!--//lead-form-wrapper-->
-      </div><!--//container-->
-    </section><!--//form-section-->
-    
 
-    <div class="text-center">
-      <a class="btn btn-primary" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/devbook-free-bootstrap-5-book-ebook-landing-page-template-for-developers/">Get Your Copy Today</a>
-    </div>
-    
-    <section id="author-section" class="author-section section theme-bg-primary py-5">
-      <div class="container py-3">
-	<div class="author-profile text-center mb-5">
-	  <img class="author-pic" src="assets/images/profiles/author-profile.png" alt="image" >
-	</div><!--//author-profile-->
-	<h2 class="section-heading text-center text-white mb-3">About The Authors</h2>
-	<div class="author-bio single-col-max mx-auto">
-	  <p>This book landing page template is made by product designer <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers. You can use this template to self-publish and promote your book/ebook. You can easily use platforms such as <a class="theme-link" href="https://gumroad.com/" target="_blank">Gumroad</a> to handle your book payment and delivery.</p>
-	  <p> This template is 100% FREE as long as you <strong>keep the footer attribution link</strong>. You do not have the rights to resell, sublicense or redistribute (even for free) the template on its own or as a separate attachment from any of your work. If you’d like to use this template without the footer attribution link, you can buy the <a class="theme-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/devbook-free-bootstrap-5-book-ebook-landing-page-template-for-developers/" target="_blank"><strong>commercial license</strong></a>.</p>
-	  <div class="author-links text-center pt-4">
-	    <h5 class="text-white mb-4">Follow Author</h5>
-	    <ul class="social-list list-unstyled">
-	      <li class="list-inline-item"><a href="https://twitter.com/3rdwave_themes"><i class="fab fa-twitter"></i></a></li>
-	      <li class="list-inline-item"><a href="https://github.com/xriley"><i class="fab fa-github-alt"></i></a></li> 
-	      <li class="list-inline-item"><a href="https://medium.com/@3rdwave_themes"><i class="fab fa-medium-m"></i></a></li>
-	      
-	      <li class="list-inline-item"><a href="https://themes.3rdwavemedia.com/"><i class="fas fa-globe-europe"></i></a></li>
-	    </ul><!--//social-list-->
-	  </div><!--//author-links-->
-	  
-	</div><!--//author-bio-->
-	
-      </div><!--//container-->
-    </section><!--//author-section-->
-    
-    
+
+    <%= File.read 'authors.html' %>
 
     <footer class="footer">
-
       <div class="footer-bottom text-center py-5">
-
-	<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+        <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
         <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-        
       </div>
-      
     </footer>
-    
+
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
     <script src="assets/plugins/smoothscroll.min.js"></script> 
-    
+
     <script src="assets/js/main.js"></script>
 
   </body>
